@@ -1,0 +1,11 @@
+  var safeevents = new SafeEvents();
+        safeevents.bind('A', function () {
+            safeevents.trigger('B');
+        });
+        safeevents.bind('B', function () {
+            safeevents.trigger('C');
+        });
+        safeevents.bind('C', function () {
+            safeevents.trigger('A');
+        });
+        safeevents.trigger('A');
